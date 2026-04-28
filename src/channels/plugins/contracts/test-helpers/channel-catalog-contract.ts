@@ -248,15 +248,7 @@ export function describeOfficialFallbackChannelCatalogContract(params: {
       const entry = listChannelPluginCatalogEntries({
         catalogPaths: [catalogPath],
         officialCatalogPaths: [],
-<<<<<<< HEAD
         env: createCatalogFallbackOnlyEnv(),
-=======
-        env: {
-          ...process.env,
-          OPENCLAW_DISABLE_BUNDLED_PLUGINS: "1",
-          OPENCLAW_BUNDLED_PLUGINS_DIR: "/nonexistent/bundled/plugins",
-        },
->>>>>>> 28cb20faf9 (fix: keep diagnostics tests aligned with bundled root trust)
       }).find((item) => item.id === params.channelId);
 
       expect(entry?.installSource?.npm).toMatchObject({
